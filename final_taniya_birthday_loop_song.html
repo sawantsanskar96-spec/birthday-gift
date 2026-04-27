@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Taniya 🌼</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fffde8 0%, #fef9e2 40%, #f0fce8 100%);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* SVG Daisy */
+  .daisy-float {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    animation: daisyFall linear infinite;
+    opacity: 0.85;
+  }
+  @keyframes daisyFall {
+    0%   { transform: translateY(-60px) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(110vh) rotate(400deg); opacity: 0; }
+  }
+
+  .star {
+    position: fixed;
+    width: 5px; height: 5px;
+    background: #f9d76a;
+    border-radius: 50%;
+    animation: twinkle ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50%       { opacity: 1;   transform: scale(1.4); }
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px 80px;
+    gap: 44px;
+  }
+
+  /* ---- HERO ---- */
+  .hero-card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(18px);
+    border-radius: 32px;
+    border: 1.5px solid rgba(250,220,80,0.35);
+    padding: 52px 44px 44px;
+    max-width: 620px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 48px rgba(250,210,60,0.15);
+    animation: floatIn 1s cubic-bezier(.22,.68,0,1.2) both;
+  }
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .daisy-big {
+    display: block;
+    margin: 0 auto 16px;
+    animation: spin 8s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #c8a400;
+    margin-bottom: 10px;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 66px);
+    font-weight: 700;
+    color: #5a7a2a;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: #8aaa44;
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 26px;
+  }
+  .divider-line {
+    width: 55px; height: 1px;
+    background: linear-gradient(90deg, transparent, #f0d040);
+  }
+  .divider-line.r { background: linear-gradient(90deg, #f0d040, transparent); }
+
+  .message-box {
+    background: linear-gradient(135deg, #fffef0, #f8fff0);
+    border-radius: 20px;
+    padding: 26px 28px;
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: #6a7a3a;
+    border: 1px solid rgba(200,210,80,0.28);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  .message-box::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    color: rgba(240,210,60,0.18);
+    position: absolute;
+    top: -12px; left: 10px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  /* ---- WISHES GRID ---- */
+  .wishes-grid {
+    max-width: 620px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    animation: floatIn 1.2s 0.2s cubic-bezier(.22,.68,0,1.2) both;
+  }
+
+  .wish-card {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    border: 1.5px solid rgba(240,220,80,0.3);
+    padding: 24px 18px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(240,210,60,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .wish-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 36px rgba(240,210,60,0.2);
+  }
+  .wish-icon { font-size: 26px; display: block; margin-bottom: 8px; }
+  .wish-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #5a7a2a;
+    margin-bottom: 4px;
+  }
+  .wish-desc { font-size: 12.5px; color: #8aaa54; line-height: 1.5; }
+
+  /* ---- CUTE MESSAGES ---- */
+  .messages-section {
+    max-width: 620px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: floatIn 1.3s 0.3s cubic-bezier(.22,.68,0,1.2) both;
+  }
+
+  .cute-msg {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    padding: 22px 26px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(240,210,60,0.12);
+    border: 1.5px solid rgba(240,220,80,0.25);
+    transition: transform 0.25s ease;
+  }
+  .cute-msg:hover { transform: translateX(6px); }
+
+  .cute-msg-icon {
+    font-size: 30px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .cute-msg-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15.5px;
+    color: #6a7a3a;
+    line-height: 1.75;
+  }
+  .cute-msg-text span {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 700;
+    color: #b8a020;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* ---- DAISY ROW ---- */
+  .daisy-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: floatIn 1.4s 0.4s both;
+  }
+  .daisy-row svg { animation: nodding 3s ease-in-out infinite; }
+  .daisy-row svg:nth-child(2) { animation-delay: 0.3s; }
+  .daisy-row svg:nth-child(3) { animation-delay: 0.6s; }
+  .daisy-row svg:nth-child(4) { animation-delay: 0.9s; }
+  .daisy-row svg:nth-child(5) { animation-delay: 1.2s; }
+  @keyframes nodding {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50%       { transform: rotate(8deg) translateY(-6px); }
+  }
+
+  /* ---- BUTTON ---- */
+  .burst-wrap { animation: floatIn 1.5s 0.5s both; }
+  .burst-btn {
+    background: linear-gradient(135deg, #f0d040, #a8d840);
+    border: none;
+    border-radius: 50px;
+    padding: 16px 48px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #3a5a10;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 28px rgba(200,210,40,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .burst-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(200,210,40,0.5); }
+  .burst-btn:active { transform: scale(0.95); }
+
+  .footer {
+    font-size: 13px;
+    color: #b0ba60;
+    letter-spacing: 0.5px;
+    animation: floatIn 1.7s 0.6s both;
+  }
+
+  .confetti-piece {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    animation: confettiFall 2.5s ease-out forwards;
+  }
+  @keyframes confettiFall {
+    0%   { opacity: 1; }
+    100% { transform: translateY(90vh) rotate(900deg); opacity: 0; }
+  }
+</style>
+</head>
+
+<body>
+<div id="introScreen" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fffde8,#fef9e2,#f0fce8);padding:20px;">
+  <div style="text-align:center;background:rgba(255,255,255,.85);padding:40px 30px;border-radius:30px;box-shadow:0 10px 40px rgba(0,0,0,.08);max-width:500px;width:100%;">
+    <div style="font-size:56px;margin-bottom:10px;">🎂</div>
+    <h1 style="font-family:'Playfair Display',serif;color:#5a7a2a;font-size:48px;margin-bottom:18px;">Happy Birthday</h1>
+    <p style="color:#8aaa44;margin-bottom:28px;font-size:18px;">A little surprise is waiting for you ✨</p>
+    <button onclick="openGift()" style="background:linear-gradient(135deg,#f0d040,#a8d840);border:none;padding:16px 34px;border-radius:50px;font-size:18px;font-weight:800;cursor:pointer;color:#3a5a10;">See My Gift 🎁</button>
+  </div>
+</div>
+<audio id="bdaySong" loop>
+<source src="C:/Users/Sanskar/Music/Happy Birthday Instrumental 🎂💕🎼 - The Birthday Channel.mp3" type="audio/mpeg">
+</audio>
+
+
+<div id="floaters"></div>
+
+<div class="page" id="mainPage" style="display:none;opacity:0;transition:opacity 1s;">
+
+  <!-- HERO -->
+  <div class="hero-card">
+    <!-- Big spinning daisy -->
+    <svg class="daisy-big" width="72" height="72" viewBox="0 0 72 72">
+      <g transform="translate(36,36)">
+        <!-- petals -->
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(40)"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(80)"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(120)"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(160)"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(200)"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(240)"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(280)"/>
+        <ellipse cx="0" cy="-22" rx="6" ry="12" fill="#fffde0" stroke="#e8d840" stroke-width="1" transform="rotate(320)"/>
+        <!-- center -->
+        <circle cx="0" cy="0" r="11" fill="#f5c518"/>
+        <circle cx="0" cy="0" r="7" fill="#e8a800"/>
+      </g>
+    </svg>
+
+    <p class="hero-subtitle">🌼 It's a special day 🌼</p>
+    <h1 class="hero-name">Happy Birthday,<br>Taniya!</h1>
+    <p class="hero-tagline">Fresh as a daisy, bright as sunshine ✨</p>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span>🌼</span>
+      <div class="divider-line r"></div>
+    </div>
+
+    <div class="message-box">
+      Hey Taniya! We may not have met in person yet, but some of the most genuine friendships bloom online — just like your favourite daisies 🌼 On your special day, I just want you to know: you bring so much warmth and light into the world. May this birthday be as lovely and bright as you are!
+    </div>
+  </div>
+
+  <!-- DAISY ROW -->
+  <div class="daisy-row" id="daisyRow"></div>
+
+  <!-- WISHES -->
+  <div class="wishes-grid">
+    <div class="wish-card">
+      <span class="wish-icon">🌼</span>
+      <p class="wish-title">Bloom Always</p>
+      <p class="wish-desc">Like your fav daisy — keep blooming beautifully every single day</p>
+    </div>
+    <div class="wish-card">
+      <span class="wish-icon">🌟</span>
+      <p class="wish-title">Big Dreams</p>
+      <p class="wish-desc">May all your biggest dreams take flight this year</p>
+    </div>
+    <div class="wish-card">
+      <span class="wish-icon">☀️</span>
+      <p class="wish-title">Sunny Days</p>
+      <p class="wish-desc">Warmth, laughter & golden moments ahead of you</p>
+    </div>
+    <div class="wish-card">
+      <span class="wish-icon">🎁</span>
+      <p class="wish-title">Sweet Surprises</p>
+      <p class="wish-desc">Life has so many beautiful gifts waiting just for you</p>
+    </div>
+  </div>
+
+  <!-- CUTE MESSAGES -->
+  <div class="messages-section">
+    <div class="cute-msg">
+      <span class="cute-msg-icon">🌼</span>
+      <p class="cute-msg-text">
+        You know what daisies mean? Innocence, joy & new beginnings. And that's exactly what I wish for you today — a fresh new chapter filled with all the good things your heart deserves.
+        <span>🌱 A new beginning</span>
+      </p>
+    </div>
+    <div class="cute-msg">
+      <span class="cute-msg-icon">💛</span>
+      <p class="cute-msg-text">
+        Even from miles away, you make the world feel a little warmer and a little brighter. Having you as a friend — even an online one — is truly one of my favourite things. Happy birthday, you sunshine person! ☀️
+        <span>💛 From the heart</span>
+      </p>
+    </div>
+    <div class="cute-msg">
+      <span class="cute-msg-icon">🌸</span>
+      <p class="cute-msg-text">
+        Here's to you, Taniya — may your cake be sweet, your day be magical, and your whole year be as pretty and cheerful as a field full of daisies just for you! 🌼🌼🌼
+        <span>🎂 Birthday magic</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- BUTTON -->
+  <div class="burst-wrap">
+    <button class="burst-btn" onclick="burstDaisies()">🌼 Shower Taniya with Daisies!</button>
+  </div>
+
+  <p class="footer">Made with 💛 & lots of daisies, just for Taniya 🌼</p>
+</div>
+
+<script>
+// ---- Daisy SVG helper ----
+function makeDaisySVG(size, petalColor, centerColor) {
+  const r = size / 2;
+  const pr = r * 0.32, py = r * 0.6, pcx = r * 0.16, pcy = r * 0.3;
+  let petals = '';
+  for (let i = 0; i < 9; i++) {
+    petals += `<ellipse cx="0" cy="${-py}" rx="${pcx}" ry="${pcy}" fill="${petalColor}" stroke="#e0d040" stroke-width="0.8" transform="rotate(${i*40})"/>`;
+  }
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(${r},${r})">${petals}
+      <circle cx="0" cy="0" r="${r*0.3}" fill="${centerColor}"/>
+      <circle cx="0" cy="0" r="${r*0.18}" fill="#d48000"/>
+    </g>
+  </svg>`;
+}
+
+// Falling daisies background
+const floaters = document.getElementById('floaters');
+const petalPalette = ['#fffde0','#fff9b0','#fffccc'];
+const centerPalette = ['#f5c518','#f0b800','#e8a800'];
+for (let i = 0; i < 22; i++) {
+  const size = 20 + Math.random() * 28;
+  const div = document.createElement('div');
+  div.className = 'daisy-float';
+  div.innerHTML = makeDaisySVG(size, petalPalette[Math.floor(Math.random()*3)], centerPalette[Math.floor(Math.random()*3)]);
+  div.style.cssText = `
+    left:${Math.random()*100}%;
+    animation-duration:${7+Math.random()*9}s;
+    animation-delay:${Math.random()*10}s;
+  `;
+  floaters.appendChild(div);
+}
+
+// Twinkling stars
+for (let i = 0; i < 22; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  s.style.cssText = `
+    left:${Math.random()*100}%; top:${Math.random()*100}%;
+    animation-duration:${1.5+Math.random()*2.5}s;
+    animation-delay:${Math.random()*3}s;
+    background:${['#f9d76a','#c8f040','#fffde0'][Math.floor(Math.random()*3)]};
+  `;
+  document.body.appendChild(s);
+}
+
+// Daisy row
+const row = document.getElementById('daisyRow');
+const rowSizes = [36,42,50,42,36,42,50,42,36];
+rowSizes.forEach((sz,i) => {
+  const wrap = document.createElement('div');
+  wrap.innerHTML = makeDaisySVG(sz, petalPalette[i%3], centerPalette[i%3]);
+  row.appendChild(wrap);
+});
+
+// Confetti burst with daisies
+function burstDaisies() {
+  const colors = ['#f5c518','#a8d840','#fffde0','#f9a8c9','#c8f040','#fff'];
+  for (let i = 0; i < 60; i++) {
+    const isDaisy = Math.random() > 0.5;
+    const c = document.createElement('div');
+    c.className = 'confetti-piece';
+    const size = isDaisy ? 18+Math.random()*14 : 8+Math.random()*10;
+    if (isDaisy) {
+      c.innerHTML = makeDaisySVG(size, petalPalette[Math.floor(Math.random()*3)], centerPalette[Math.floor(Math.random()*3)]);
+    } else {
+      c.style.width = size+'px';
+      c.style.height = size+'px';
+      c.style.background = colors[Math.floor(Math.random()*colors.length)];
+      c.style.borderRadius = Math.random()>0.5?'50%':'3px';
+    }
+    c.style.left = (15+Math.random()*70)+'%';
+    c.style.top  = (5+Math.random()*30)+'%';
+    c.style.animationDelay = (Math.random()*0.7)+'s';
+    c.style.animationDuration = (2+Math.random()*1.4)+'s';
+    c.style.transform = `rotate(${Math.random()*360}deg)`;
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 4000);
+  }
+}
+
+
+function openGift(){
+ const intro=document.getElementById('introScreen');
+ const page=document.getElementById('mainPage');
+ const song=document.getElementById('bdaySong');
+ page.style.display='flex';
+ setTimeout(()=>page.style.opacity='1',50);
+ intro.style.transition='opacity .8s';
+ intro.style.opacity='0';
+ setTimeout(()=>intro.remove(),800);
+ song.currentTime=0;
+ song.play().catch(()=>{});
+ }
+
+</script>
+</body>
+</html>
